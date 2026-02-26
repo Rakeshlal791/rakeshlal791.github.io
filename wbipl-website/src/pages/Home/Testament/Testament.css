@@ -1,0 +1,139 @@
+/* Equal top/bottom spacing + fix global container margin-top only here */
+.testamentWrap {
+  padding: 30px 0;
+}
+
+.testamentWrap .container {
+  margin-top: 0;
+}
+
+/* Head */
+.testamentHead {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.testamentHeading {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.testamentSub {
+  margin: 10px auto 0;
+  line-height: 1.6;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* Slider wrapper */
+.testamentSlider {
+  position: relative;
+}
+
+/* IMPORTANT: Scope Swiper styling to this section only */
+.testamentSwiper {
+  width: 100%;
+  padding-bottom: 34px; /* space for pagination dots */
+}
+
+/* Don’t use height:100% anywhere (breaks layouts) */
+.testamentSwiper .swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Make card stretch nicely inside slide */
+.testamentSwiper .swiper-slide > * {
+  width: 100%;
+}
+
+/* Card - consistent with your site */
+.testamentCard {
+  padding: 22px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+}
+
+.testamentText {
+  margin: 0;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.testamentFooter {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.testamentName {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.testamentRole {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.testamentQuote {
+  font-size: 68px;
+  line-height: 0.85;
+  opacity: 0.22;
+  font-weight: 700;
+}
+
+/* Pagination dots: inactive light, active yellow */
+.testamentSwiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+.testamentSwiper .swiper-pagination-bullet-active {
+  background: #dcb900;
+}
+
+/* Navigation arrows (Swiper defaults are fine, we style them to match site) */
+.testamentSwiper .swiper-button-prev,
+.testamentSwiper .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.testamentSwiper .swiper-button-prev::after,
+.testamentSwiper .swiper-button-next::after {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Keep arrows inside container so they don't overflow weirdly */
+.testamentSwiper .swiper-button-prev {
+  left: 6px;
+}
+.testamentSwiper .swiper-button-next {
+  right: 6px;
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+  .testamentHeading {
+    font-size: 28px;
+  }
+
+  .testamentSub {
+    font-size: 14px;
+  }
+
+  .testamentCard {
+    padding: 18px;
+  }
+}

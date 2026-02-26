@@ -1,0 +1,209 @@
+:root {
+  --header-h: 84px;
+}
+
+.navbar-logo-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  z-index: 100;
+  background: #fff;
+}
+
+.navbar-logo-left-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.shadow-three {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* FULL WIDTH container so left & right can stick to edges */
+.container-copy {
+  width: 100%;
+  padding: 0 20px; /* breathing room on both sides */
+}
+
+/* 3-column header: left | center | right */
+.navbar-wrapper {
+  height: var(--header-h);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+/* LEFT: brand pinned */
+.navbar-brand {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* WBI logo*/
+.image-9 {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.heading-9 {
+  font-size: 16px;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* CENTER: nav centered */
+.nav-menu-wrapper {
+  justify-self: center;
+}
+
+.nav-menu-two {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #111;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.nav-link.active {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* RIGHT: RDSO + hamburger pinned right */
+.div-block-17 {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* RDSO logo */
+.image-8 {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+
+/* Hamburger hidden on desktop */
+.menu-button {
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.w-icon-nav-menu {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  display: block;
+}
+
+.w-icon-nav-menu::before,
+.w-icon-nav-menu::after,
+.w-icon-nav-menu span {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+}
+
+.w-icon-nav-menu::before { top: 0; }
+.w-icon-nav-menu span { top: 6px; }
+.w-icon-nav-menu::after { bottom: 0; }
+
+/* MOBILE: dropdown nav */
+@media (max-width: 900px) {
+  /* hide centered nav */
+  .nav-menu-wrapper {
+    display: none;
+  }
+
+  /* show hamburger */
+  .menu-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* dropdown menu appears below header aligned right */
+  .nav-menu-wrapper.is-open {
+    display: block;
+    position: absolute;
+    top: var(--header-h);
+    right: 14px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 16px;
+    padding: 10px;
+    min-width: 260px;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.14);
+    z-index: 120;
+  }
+
+  .nav-menu-two {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  /* to hide RDSO on tiny screens, not used */
+  /* .image-8 { display: none; } */
+}
+
+@media (max-width: 600px) {
+  :root {
+    --header-h: 64px; /* reduce header height on mobile */
+  }
+
+  .container-copy {
+    padding: 0 12px; /* tighter side padding */
+  }
+
+  .image-9 {          /* WBI logo */
+    height: 45px;
+  }
+
+  .heading-9 {        /* Brand text */
+    font-size: 13px;
+    line-height: 1.05;
+  }
+
+  .image-8 {          /* RDSO logo */
+    height: 45px;
+  }
+
+  .menu-button {      /* hamburger slightly smaller */
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+}

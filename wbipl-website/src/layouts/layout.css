@@ -1,0 +1,15 @@
+:root {
+  --header-h: 64px;
+  --footer-h: 72px;
+}
+
+/* Full-height app shell */
+.appShell {
+  min-height: 100vh;
+}
+
+/* Main content should not hide behind fixed header/footer */
+.appMain {
+  padding-top: var(--header-h);
+  padding-bottom: var(--footer-h);
+}

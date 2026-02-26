@@ -1,0 +1,151 @@
+/* Uses your global .container width (like Marquee).
+   No max-width here. */
+.bvWrap {
+  padding: 30px 0;
+}
+
+/* Fix imbalance if you have global .container { margin-top: ... } */
+.bvWrap .container {
+  margin-top: 0;
+}
+
+/* Inner shell (Marquee-like): rounded surface inside container */
+.bvShell {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+
+  height: 600px;
+
+  /* Taller than before */
+  padding: 120px 28px;
+
+  background-image: url("/images/tirupati-low.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay for readability */
+.bvShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 18, 28, 0.44);
+  z-index: 0;
+}
+
+/* Content sits above overlay */
+.bvShell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bvTitle {
+  margin: 0 0 26px 0;
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: #fff;
+}
+
+/* Grid */
+.bvGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: stretch;
+}
+
+/* Cards */
+.bvCard {
+  border-radius: 10px;
+  background: rgba(20, 16, 73, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  /* Slightly higher cards */
+  min-height: 240px;
+
+  padding: 24px 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  text-align: center;
+}
+
+.bvCardTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.bvIconWrap {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+}
+
+.bvIcon {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .bvShell {
+    padding: 36px 18px;
+  }
+
+  .bvGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .bvCard {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .bvShell {
+    padding: 28px 14px;
+    border-radius: 10px;
+  }
+
+  .bvTitle {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .bvGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .bvCard {
+    min-height: 190px;
+    padding: 20px 14px;
+  }
+
+  .bvCardTitle {
+    font-size: 18px;
+  }
+
+  .bvIconWrap {
+    width: 58px;
+    height: 58px;
+  }
+
+  .bvIcon {
+    width: 52px;
+    height: 52px;
+  }
+}
